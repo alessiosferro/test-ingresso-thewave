@@ -17,6 +17,7 @@ Gli obiettivi del test sono divisi in "**mandatory**" (ovvero quello che ci si a
 - - Completare l'intera logica dei filtri, implementando anche quelli nella pagina 3 del Figma.
 - - Completare l'intera UI seguendo il design proposto.
 - - Creare una paginazione infinita così che i nuovi personaggi fetchati si vadano ad aggiungere a quelli già esistenti, scrollando il Documento nel punto giusto.
+- - Versione Mobile e/o Tablet
 
 ## Note
 
