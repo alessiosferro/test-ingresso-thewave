@@ -1,11 +1,9 @@
 export type Colors = {
-  [Color in '50' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900']: string;
+  [Color in 'main' | '50' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900']: string;
 }
 
-export interface ThemeColors {
-  primary: Colors;
-  secondary: Colors;
-  tertiary: Colors;
+export type NeutralColors = {
+  [Color in 'black' | 'white' | 'red' | 'darkGray']: string;
 }
 
 export type ThemeShadows = {

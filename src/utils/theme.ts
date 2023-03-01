@@ -1,16 +1,40 @@
-import {createTheme} from "@mui/material";
-import {ThemeColors, ThemeShadows} from "@/model/theme.model";
+import {createTheme, responsiveFontSizes} from "@mui/material";
+import {Colors, NeutralColors, ThemeShadows} from "@/model/theme.model";
+
+const htmlFontSize = 20;
 
 declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    xs: false,
+    sm: false,
+    md: false,
+    lg: false,
+    xl: false,
+    mobile: true,
+    tabletPortrait: true,
+    tabletLandscape: true,
+    desktopMedium: true,
+    desktopLarge: true,
+    desktopExtraLarge: true
+  }
+
   interface ThemeOptions {
-    colors: ThemeColors;
-    boxShadow: ThemeShadows;
+    boxShadows: ThemeShadows;
+  }
+
+  interface PaletteOptions {
+    tertiary: Colors;
+    neutral: NeutralColors;
   }
 }
 
 const theme = createTheme({
-  colors: {
+  typography: {
+    htmlFontSize,
+  },
+  palette: {
     primary: {
+      main: "#96ce4b",
       50: '#f0fce2',
       100: '#daf0be',
       200: '#c4e499',
@@ -23,6 +47,7 @@ const theme = createTheme({
       900: '#0a1500'
     },
     secondary: {
+      main: "#f9bf1f",
       50: '#fff8db',
       100: '#feeaae',
       200: '#fddc80',
@@ -35,6 +60,7 @@ const theme = createTheme({
       900: '#1d1100'
     },
     tertiary: {
+      main: "#69a8af",
       50: '#e0f8fc',
       100: '#c6e4e6',
       200: '#a8d0d4',
@@ -45,14 +71,65 @@ const theme = createTheme({
       700: '#275054',
       800: '#123134',
       900: '#001316'
+    },
+    neutral: {
+      black: "#1a1a1a",
+      white: "#ffffff",
+      red: "#c81d25",
+      darkGray: "#264653"
     }
   },
-  boxShadow: {
+  spacing: (factor: number) => `${factor / htmlFontSize}rem`,
+  breakpoints: {
+    values: {
+      mobile: 0,
+      tabletPortrait: 768,
+      tabletLandscape: 1024,
+      desktopMedium: 1280,
+      desktopLarge: 1440,
+      desktopExtraLarge: 1920
+    }
+  },
+  boxShadows: {
     dp2: '0px 4px 6px -4px rgba(24, 39, 75, 0.1), 0px 8px 8px -4px rgba(24, 39, 75, 0.06)',
     dp4: '0px 6px 12px -6px rgba(24, 39, 75, 0.1), 0px 8px 24px -4px rgba(24, 39, 75, 0.06)',
     dp6: '0px 8px 18px -6px rgba(24, 39, 75, 0.1), 0px 12px 42px -4px rgba(24, 39, 75, 0.1)',
-    dp8: '0px 8px 28px -6px rgba(24, 39, 75, 0.1), 0px 18px 88px -4px rgba(24, 39, 75, 0.12)',
+    dp8: '0px 8px 28px -6px rgba(24, 39, 75, 0.1), 0px 18px 88px -4px rgba(24, 39, 75, 0.12)'
   }
 });
+
+theme.typography.h1 = {
+  fontSize: theme.spacing(29),
+  lineHeight: theme.spacing(40),
+  fontFamily: "Playfair Display",
+  fontWeight: "bold",
+  letterSpacing: "auto",
+
+  [theme.breakpoints.up('desktopMedium')]: {
+    fontSize: theme.spacing(40),
+    lineHeight: theme.spacing(52),
+  }
+}
+
+theme.typography.h2 = {
+  fontSize: theme.spacing(22),
+  lineHeight: theme.spacing(40),
+  fontFamily: "Playfair Display",
+  fontWeight: "bold",
+  letterSpacing: "auto",
+
+  [theme.breakpoints.up('desktopMedium')]: {
+    fontSize: theme.spacing(36),
+    lineHeight: theme.spacing(52)
+  }
+}
+
+theme.typography.body1 = {
+  fontFamily: "Open Sans",
+  fontSize: theme.spacing(16),
+  lineHeight: theme.spacing(18),
+  fontWeight: "normal",
+  letterSpacing: "auto"
+}
 
 export default theme;

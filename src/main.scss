@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('assets/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('assets/fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('assets/fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
