@@ -6,6 +6,10 @@ html {
   font-size: 20px;
 }
 
+body {
+  margin: 0;
+}
+
 @font-face {
   font-family: 'Open Sans';
   src: url('assets/fonts/OpenSans-Regular.ttf') format('truetype');

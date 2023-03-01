@@ -80,6 +80,7 @@ const theme = createTheme({
     }
   },
   spacing: (factor: number) => `${factor / htmlFontSize}rem`,
+
   breakpoints: {
     values: {
       mobile: 0,
@@ -131,5 +132,44 @@ theme.typography.body1 = {
   fontWeight: "normal",
   letterSpacing: "auto"
 }
+
+theme.components = {
+  MuiContainer: {
+    defaultProps: {
+      sx: {
+        px: {
+          "mobile": theme.spacing(20),
+          "tabletPortrait": theme.spacing(32),
+          "tabletLandscape": theme.spacing(44),
+          "desktopMedium": theme.spacing(42),
+          "desktopLarge": theme.spacing(76),
+          "desktopExtraLarge": theme.spacing(88)
+        }
+      }
+    }
+  },
+  MuiGrid: {
+    defaultProps: {
+      columns: {
+        "mobile": 4,
+        "tabletPortrait": 8,
+        "tabletLandscape": 8,
+        "desktopMedium": 12
+      },
+      rowSpacing: {
+        mobile: 24,
+        desktopMedium: 40,
+      },
+      columnSpacing: {
+        mobile: 20,
+        tabletPortrait: 24,
+        tabletLandscape: 24,
+        desktopMedium: 28,
+        desktopLarge: 32,
+        desktopExtraLarge: 32,
+      }
+    }
+  }
+};
 
 export default theme;
