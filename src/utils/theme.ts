@@ -136,6 +136,7 @@ theme.typography.body1 = {
 theme.components = {
   MuiContainer: {
     defaultProps: {
+      maxWidth: false,
       sx: {
         px: {
           "mobile": theme.spacing(20),

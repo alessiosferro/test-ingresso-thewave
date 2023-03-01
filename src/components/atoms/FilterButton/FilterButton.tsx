@@ -2,7 +2,7 @@ import {useFormContext, useWatch} from "react-hook-form";
 import {FilterButtonProps} from "./FilterButton.props";
 import Pill from "../Pill/Pill";
 import {Input} from "@mui/material";
-import TimesIcon from "../Icons/TimesIcon";
+import SvgTimesIcon from "../Svg/SvgTimesIcon";
 import {useCallback, useMemo} from "react";
 
 const FilterButton = (props: FilterButtonProps) => {
@@ -22,7 +22,7 @@ const FilterButton = (props: FilterButtonProps) => {
   return (
     <Pill variant={variant}
           label={label}
-          endIcon={value ? <TimesIcon /> : null}
+          endIcon={value ? <SvgTimesIcon /> : null}
           onClick={clickHandler}>
       <Input
         sx={{display: "none"}}
