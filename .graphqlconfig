@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "test-ingresso": {
+      "schemaPath": "./schema.graphql",
+      "name": "Rick And Morty GraphQL",
+      "extensions": {
+        "endpoints": {
+          "Default GraphQL Endpoint": {
+            "url": "https://rickandmortyapi.com/graphql",
+            "introspect": true
+          }
+        }
+      }
+    }
+  }
+}
