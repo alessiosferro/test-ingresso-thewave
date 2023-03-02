@@ -3,6 +3,7 @@ import {Fragment, useEffect, useRef} from "react";
 import {MainContentProps} from "./MainContent.props";
 import theme from "@/utils/theme";
 import Card from "@/molecules/Card/Card";
+import {characterStatusVariantMap} from "@/utils/constants";
 
 const MainContent = (props: MainContentProps) => {
   const {
@@ -27,7 +28,7 @@ const MainContent = (props: MainContentProps) => {
     observer.observe(element);
 
     return () => observer.unobserve(element);
-  }, []);
+  }, [hasNextPage]);
 
   return (
     <Box component="main"
@@ -55,8 +56,8 @@ const MainContent = (props: MainContentProps) => {
                           first seen in <strong>{character?.episode?.[0]?.name}</strong> and last seen in
                           episode <strong>{character?.episode?.at(-1)?.name}.</strong>
                         </Typography>}
-                        imageAlt=""
-                        statusVariant="success"
+                        imageAlt={`A portrait of ${character?.name}`}
+                        statusVariant={character?.status ? characterStatusVariantMap[character.status.toLowerCase()] : "success"}
                         statusLabel={character?.status || ""}
                         subtitle={`${character?.species} – ${character?.gender}`}
                   />
