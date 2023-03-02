@@ -24,7 +24,7 @@ const Card = (props: CardProps) => {
       <Box padding={theme.spacing(27, 25, 48)}>
         <Typography color="tertiary.600" variant="h2">{title}</Typography>
         <Typography color="tertiary.400" component="p" variant="subtitle1">{subtitle}</Typography>
-        <Pill label={statusLabel} variant={statusVariant} sx={{my: theme.spacing(21)}} />
+        <Pill label={statusLabel} variant={statusVariant} my={theme.spacing(21)}/>
         <Typography component="p" variant="body1">{description}</Typography>
       </Box>
     </Box>

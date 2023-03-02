@@ -20,7 +20,7 @@ const MainContent = (props: MainContentProps) => {
 
     const observer = new IntersectionObserver((entries) => {
       const [target] = entries;
-      if (target.isIntersecting || hasNextPage) return;
+      if (!target.isIntersecting || !hasNextPage) return;
       onIntersecting();
     }, { threshold: 0 });
 
@@ -31,12 +31,11 @@ const MainContent = (props: MainContentProps) => {
 
   return (
     <Box component="main"
-         sx={{
-           minHeight: "100vh",
-           paddingTop: theme.spacing(243),
-           paddingBottom: theme.spacing(40),
-           background: "linear-gradient(180deg, #C6E4E6 0%, rgba(224, 248, 252, 0) 100%)"
-    }}>
+         position="relative"
+         minHeight="100vh"
+         pt={theme.spacing(243)}
+         pb={theme.spacing(40)}
+         sx={{ background: 'linear-gradient(180deg, #C6E4E6 0%, rgba(224, 248, 252, 0) 100%)' }}>
       <Container>
         <Grid container>
           {characterPages.map((page, index) => (

@@ -41,7 +41,7 @@ const Pill = (props: PropsWithChildren<PillProps>) => {
     onClick,
     children,
     endIcon,
-    sx = {},
+    ...otherProps
   } = props;
 
   const boxPadding = useMemo(() =>
@@ -54,17 +54,17 @@ const Pill = (props: PropsWithChildren<PillProps>) => {
   return (
     <>
       <Box sx={{
-        transition: "background-color 100ms ease",
-        display: "inline-block",
-        padding: boxPadding,
-        minWidth: theme.spacing(101),
-        textAlign: "center",
-        borderRadius: theme.spacing(10),
-        fontSize: 0,
-        ...pillVariantMap[variant],
-        ...sx
-      }}
+              transition: "background-color 100ms ease",
+              display: "inline-block",
+              padding: boxPadding,
+              minWidth: theme.spacing(101),
+              textAlign: "center",
+              borderRadius: theme.spacing(10),
+              fontSize: 0,
+              ...pillVariantMap[variant],
+            }}
            onClick={onClick}
+           {...otherProps}
       >
         <Typography component="span"
                     textTransform="uppercase"
