@@ -9,6 +9,7 @@ const MainContent = (props: MainContentProps) => {
   const {
     onIntersecting,
     hasNextPage,
+    isDropdownOpen,
     characterPages
   } = props;
 
@@ -23,7 +24,7 @@ const MainContent = (props: MainContentProps) => {
       const [target] = entries;
       if (!target.isIntersecting || !hasNextPage) return;
       onIntersecting();
-    }, { threshold: 0 });
+    }, {threshold: 0});
 
     observer.observe(element);
 
@@ -34,9 +35,13 @@ const MainContent = (props: MainContentProps) => {
     <Box component="main"
          position="relative"
          minHeight="100vh"
-         pt={theme.spacing(243)}
+         pt={theme.spacing(280)}
          pb={theme.spacing(40)}
-         sx={{ background: 'linear-gradient(180deg, #C6E4E6 0%, rgba(224, 248, 252, 0) 100%)' }}>
+         sx={{
+           transition: "filter 200ms ease",
+           filter: isDropdownOpen ? `blur(${theme.spacing(5)})` : '',
+           background: 'linear-gradient(180deg, #C6E4E6 0%, rgba(224, 248, 252, 0) 100%)'
+         }}>
       <Container>
         <Grid container>
           {characterPages.map((page, index) => (

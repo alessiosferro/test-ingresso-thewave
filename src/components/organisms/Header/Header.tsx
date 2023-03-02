@@ -1,9 +1,15 @@
 import {Box, Button, Container, Grid, Typography} from "@mui/material";
-import SvgLogo from "../atoms/Svg/SvgLogo";
-import SvgBarsSolid from "../atoms/Svg/SvgBarsSolid";
-import SvgSearch from "../atoms/Svg/SvgSearch";
+import SvgLogo from "@/atoms/Svg/SvgLogo";
+import SvgBarsSolid from "@/atoms/Svg/SvgBarsSolid";
+import SvgSearch from "@/atoms/Svg/SvgSearch";
+import SearchBar from "@/molecules/SearchBar/SearchBar";
+import {homepageSearchBarFilters} from "@/utils/constants";
+import {HeaderProps} from "@/organisms/Header/Header.props";
+import theme from "@/utils/theme";
 
-const Header = () => {
+const Header = (props: HeaderProps) => {
+  const { onDropdownOpen, isDropdownOpen } = props;
+
   return (
     <Box component="header"
          position="fixed"
@@ -28,6 +34,12 @@ const Header = () => {
           </Button>
         </Box>
       </Container>
+
+      <SearchBar name="searchKey"
+                 onDropdownOpen={onDropdownOpen}
+                 isDropdownOpen={isDropdownOpen}
+                 filters={homepageSearchBarFilters}
+      />
     </Box>
   )
 }
