@@ -1,3 +1,5 @@
+import {SxProps, Theme} from "@mui/material";
+
 export type PillVariant = 'success' | 'error' | 'dark' | 'filter' | 'filterActive';
 
 export interface PillProps {
@@ -5,4 +7,5 @@ export interface PillProps {
   variant: PillVariant;
   onClick?: () => void;
   endIcon?: JSX.Element | null;
+  sx?: SxProps<Theme>;
 }

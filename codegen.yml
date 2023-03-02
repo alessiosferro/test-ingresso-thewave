@@ -1,0 +1,8 @@
+schema:
+  - https://rickandmortyapi.com/graphql
+documents:
+  - "src/**/*.tsx"
+  - "src/**/*.ts"
+generates:
+  src/model/:
+    preset: client

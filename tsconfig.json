@@ -18,7 +18,10 @@
     "jsx": "react-jsx",
     "paths": {
       "@/utils/*": ["utils/*"],
-      "@/model/*": ["model/*"]
+      "@/model/*": ["model/*"],
+      "@/atoms/*": ["components/atoms/*"],
+      "@/molecules/*": ["components/molecules/*"],
+      "@/organisms/*": ["components/organisms/*"],
     }
   },
   "include": ["src"],

@@ -18,6 +18,10 @@ declare module '@mui/material/styles' {
     desktopExtraLarge: true
   }
 
+  interface Theme {
+    boxShadows: ThemeShadows;
+  }
+
   interface ThemeOptions {
     boxShadows: ThemeShadows;
   }

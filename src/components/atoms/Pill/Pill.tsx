@@ -41,6 +41,7 @@ const Pill = (props: PropsWithChildren<PillProps>) => {
     onClick,
     children,
     endIcon,
+    sx = {},
   } = props;
 
   const boxPadding = useMemo(() =>
@@ -61,6 +62,7 @@ const Pill = (props: PropsWithChildren<PillProps>) => {
         borderRadius: theme.spacing(10),
         fontSize: 0,
         ...pillVariantMap[variant],
+        ...sx
       }}
            onClick={onClick}
       >
